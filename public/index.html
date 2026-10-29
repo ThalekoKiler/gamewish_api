@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameWish - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 GameWish</h1>
+            <p>Gerenciador de Jogos & Lista de Desejos</p>
+        </header>
+
+        <div class="grid">
+            <section class="card" id="auth-painel">
+                <h2>Área de Acesso</h2>
+
+                <div id="auth-forms">
+                    <form id="form-login">
+                        <h3>Login</h3>
+                        <input type="email" id="login-email" placeholder="Email" required>
+                        <input type="password" id="login-password" placeholder="Senha" required>
+                        <button type="submit">Entrar</button>
+                    </form>
+
+                    <hr>
+
+                    <form id="form-register">
+                        <h3>Criar Conta</h3>
+                        <input type="text" id="reg-name" placeholder="Nome" required>
+                        <input type="email" id="reg-email" placeholder="Email" required>
+                        <input type="password" id="reg-password" placeholder="Senha (min. 6 chars)" required>
+                        <button type="submit" class="btn-secondary">Cadastrar</button>
+                    </form>
+                </div>
+
+                <div id="user-info" class="hidden">
+                    <p>Conectado como: <strong id="logged-user-name"></strong></p>
+                    <button id="btn-logout" class="btn-danger">Sair</button>
+                </div>
+            </section>
+
+            <section class="card" id="game-form-painel">
+                <h2>Novo Jogo</h2>
+                <form id="form-game">
+                    <input type="text" id="game-title" placeholder="Título (ex: Elden Ring)" required>
+                    <input type="text" id="game-genre" placeholder="Gênero (ex: Soulslike)" required>
+                    <input type="text" id="game-platform" placeholder="Plataforma (ex: PC, PS5)" required>
+                    <input type="number" id="game-rating" placeholder="Nota (0 a 10)" step="0.5" min="0" max="10">
+
+                    <select id="game-status">
+                        <option value="desejado">Desejado</option>
+                        <option value="jogando">Jogando</option>
+                        <option value="concluido">Concluido</option>
+                        <option value="abandonado">Abandonado</option>
+                    </select>
+
+                    <button type="submit">Adicionar Jogo</button>
+                </form>
+            </section>
+        </div>
+
+        <section class="card full-width">
+            <div class="list-header">
+                <h2>Catálago de Jogos</h2>
+                <button id="btn-reload" class="btn-secondary">Atualizar Lista</button>
+            </div>
+            <div id="games-container" class="games-grid">
+                <p class="placeholder-text">Carregando jogos...</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
